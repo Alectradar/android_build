@@ -2189,11 +2189,11 @@ function chromium_prebuilt() {
 >>>>>>> a7b49e9... build: Add chromium prebuilt support to envsetup.sh && The core Makefile
 =======
     libsCheck=$T/prebuilts/chromium/$TARGET_DEVICE/lib/libwebviewchromium.so
-    frameworksCheck=$T/prebuilts/chromium/$TARGET_DEVICE/framework/webview/paks
+    appCheck=$T/prebuilts/chromium/$TARGET_DEVICE/app/webview
     device_target=$T/prebuilts/chromium/$TARGET_DEVICE/
 >>>>>>> 6d10827... Prebuilt chromium: Run a check for target device directory
 
-    if [ -r $hash ] && [ $(git --git-dir=$T/external/chromium/.git --work-tree=$T/external/chromium rev-parse --verify HEAD) == $(cat $hash) ] && [ -f $libsCheck ] && [ -d $frameworksCheck ]; then
+    if [ -r $hash ] && [ $(git --git-dir=$T/external/chromium_org/.git --work-tree=$T/external/chromium_org rev-parse --verify HEAD) == $(cat $hash) ] && [ -f $libsCheck ] && [ -d $appCheck ]; then
         export PRODUCT_PREBUILT_WEBVIEWCHROMIUM=yes
         echo "** Prebuilt Chromium is up-to-date; Will be used for build **"
     else
