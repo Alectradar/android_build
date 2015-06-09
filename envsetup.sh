@@ -570,8 +570,6 @@ function lunch()
 
     echo
 
-<<<<<<< HEAD
-=======
     if [[ $USE_PREBUILT_CHROMIUM -eq 1 ]]; then
         chromium_prebuilt
     else
@@ -581,7 +579,6 @@ function lunch()
 
     fixup_common_out_dir
 
->>>>>>> a7b49e9... build: Add chromium prebuilt support to envsetup.sh && The core Makefile
     set_stuff_for_environment
     printconfig
 
