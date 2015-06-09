@@ -2174,24 +2174,17 @@ function mk_timer()
     return $ret
 }
 
-<<<<<<< HEAD
 function make()
 {
     mk_timer $(get_make_command) "$@"
 }
-
-=======
 function chromium_prebuilt() {
     T=$(gettop)
     export TARGET_DEVICE=$(get_build_var TARGET_DEVICE)
     hash=$T/prebuilts/chromium/$TARGET_DEVICE/hash.txt
-<<<<<<< HEAD
->>>>>>> a7b49e9... build: Add chromium prebuilt support to envsetup.sh && The core Makefile
-=======
     libsCheck=$T/prebuilts/chromium/$TARGET_DEVICE/lib/libwebviewchromium.so
     appCheck=$T/prebuilts/chromium/$TARGET_DEVICE/app/webview
     device_target=$T/prebuilts/chromium/$TARGET_DEVICE/
->>>>>>> 6d10827... Prebuilt chromium: Run a check for target device directory
 
     if [ -r $hash ] && [ $(git --git-dir=$T/external/chromium_org/.git --work-tree=$T/external/chromium_org rev-parse --verify HEAD) == $(cat $hash) ] && [ -f $libsCheck ] && [ -d $appCheck ]; then
         export PRODUCT_PREBUILT_WEBVIEWCHROMIUM=yes
